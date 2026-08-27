@@ -1,21 +1,21 @@
-# 💬 ChatApp - Realtime Chat & WebRTC Calling Platform
+# ChatApp - Realtime Chat & WebRTC Calling Platform
 
 A production-ready, full-stack realtime communication platform built with a high-performance **Next.js 15 (App Router)** client and a scalable **NestJS** backend, powered by **MongoDB, Redis, Socket.io, and WebRTC**.
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
-* **⚡ Real-time Messaging:** Low-latency 1-on-1 and Group chats via Socket.IO with typing indicators and online presence tracking.
-* **📞 WebRTC Audio & Video Calling:** Peer-to-peer audio and video calls with WebSockets signaling and media controls.
-* **🛡️ Authentication & Authorization:** JWT Access/Refresh tokens with persistent session management via Zustand and Axios interceptors.
-* **🎨 Modern Responsive UI:** Built with Next.js 15 App Router, Tailwind CSS v4, Lucide Icons, and Radix UI (Shadcn UI design system).
-* **📌 Rich Message Interactions:** Pinned messages, emoji reactions, message deletion, reply threads, and file/media attachments.
-* **🚀 Infrastructure & Caching:** MongoDB for primary data storage, Redis for fast pub/sub and session caching, managed via Docker Compose.
+* **Real-time Messaging:** Low-latency 1-on-1 and Group chats via Socket.IO with typing indicators and online presence tracking.
+* **WebRTC Audio & Video Calling:** Peer-to-peer audio and video calls with WebSockets signaling and media controls.
+* **Authentication & Authorization:** JWT Access/Refresh tokens with persistent session management via Zustand and Axios interceptors.
+* **Modern Responsive UI:** Built with Next.js 15 App Router, Tailwind CSS v4, Lucide Icons, and Radix UI (Shadcn UI design system).
+* **Rich Message Interactions:** Pinned messages, emoji reactions, message deletion, reply threads, and file/media attachments.
+* **Infrastructure & Caching:** MongoDB for primary data storage, Redis for fast pub/sub and session caching, managed via Docker Compose.
 
 ---
 
-## 🏗️ Architecture & Tech Stack
+## Architecture & Tech Stack
 
 ```
 chatapp/
@@ -45,7 +45,7 @@ chatapp/
 
 ---
 
-## 📂 Frontend Architecture (Next.js Layer Flow)
+## Frontend Architecture (Next.js Layer Flow)
 
 For developers coming from a backend or structured framework (like NestJS), the Next.js frontend is organized cleanly into modular layers:
 
@@ -62,7 +62,7 @@ For developers coming from a backend or structured framework (like NestJS), the 
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 * **Node.js:** `>= 20.x`
 * **npm:** `>= 10.x`
@@ -70,7 +70,7 @@ For developers coming from a backend or structured framework (like NestJS), the 
 
 ---
 
-## ⚙️ Environment Configuration
+## Environment Configuration
 
 Copy the example environment file to both root, server, and client directories:
 
@@ -95,7 +95,7 @@ NEXT_PUBLIC_SOCKET_URL=http://localhost:5000
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Step 1: Start Database Services (Docker)
 
@@ -144,7 +144,7 @@ npm run dev:client
 
 ---
 
-## 📦 Monorepo Scripts Reference
+## Monorepo Scripts Reference
 
 | Command | Description |
 | :--- | :--- |
@@ -159,7 +159,7 @@ npm run dev:client
 
 ---
 
-## 🔌 API & Realtime Socket Events
+## API & Realtime Socket Events
 
 ### HTTP Endpoints (`/api`)
 * `POST /api/auth/register` - Create a new user account
@@ -182,5 +182,5 @@ npm run dev:client
 
 ---
 
-## 📄 License
+## License
 This project is for educational and portfolio purposes.
