@@ -29,7 +29,9 @@ export const useAuthStore = create<AuthState>((set) => ({
     localStorage.setItem('accessToken', accessToken);
     localStorage.setItem('refreshToken', refreshToken);
     localStorage.setItem('user', JSON.stringify(user));
+
     connectSocket(accessToken);
+
     set({ user, accessToken, isLoading: false });
   },
 
@@ -37,10 +39,13 @@ export const useAuthStore = create<AuthState>((set) => ({
     try {
       await api.post('/auth/logout');
     } catch {}
+
     localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
     localStorage.removeItem('user');
+
     disconnectSocket();
+
     set({ user: null, accessToken: null, isLoading: false });
   },
 
@@ -48,8 +53,12 @@ export const useAuthStore = create<AuthState>((set) => ({
     try {
       const token = localStorage.getItem('accessToken');
       const cachedUser = localStorage.getItem('user');
+
       if (cachedUser && token) {
-        set({ user: JSON.parse(cachedUser), accessToken: token });
+        set({
+          user: JSON.parse(cachedUser),
+          accessToken: token
+        });
       }
 
       if (!token) {
@@ -58,14 +67,26 @@ export const useAuthStore = create<AuthState>((set) => ({
       }
 
       const { data } = await api.get('/auth/me');
+
       localStorage.setItem('user', JSON.stringify(data));
+
       connectSocket(token);
-      set({ user: data, accessToken: token, isLoading: false });
+
+      set({
+        user: data,
+        accessToken: token,
+        isLoading: false
+      });
     } catch {
       localStorage.removeItem('accessToken');
       localStorage.removeItem('refreshToken');
       localStorage.removeItem('user');
-      set({ user: null, accessToken: null, isLoading: false });
+
+      set({
+        user: null,
+        accessToken: null,
+        isLoading: false
+      });
     }
   },
 }));
